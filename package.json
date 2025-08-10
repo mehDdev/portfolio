@@ -4,10 +4,13 @@
     "tailwindcss": "^4.1.7"
   },
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/styles/main.css --watch",
-    "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
-    "copy:html": "mkdir -p dist && cp src/*.html dist/",
-    "build": "npm run build:css && npm run copy:html",
+    "dev": "npx @tailwindcss/cli -i ./input.css -o ./styles/main.css --watch",
+    "copy:html": "mkdir -p dist && cp index.html portfolio.html err.html dist/",
+    "copy:fonts": "mkdir -p dist/fonts && cp -r fonts/* dist/fonts/",
+    "copy:images": "mkdir -p dist/images && cp -r images/* dist/images/",
+    "copy:scripts": "mkdir -p dist/scripts && cp -r scripts/* dist/scripts/",
+    "copy:styles": "mkdir -p dist/styles && cp -r styles/* dist/styles/",
+    "build": "npm run copy:html && npm run copy:fonts && npm run copy:images && npm run copy:scripts && npm run copy:styles",
     "predeploy": "npm run build",
     "deploy": "npx gh-pages -d dist"
   },
