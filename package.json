@@ -5,7 +5,9 @@
   },
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/styles/main.css --watch",
-    "build": "npx tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "copy:html": "mkdir -p dist && cp src/*.html dist/",
+    "build": "npm run build:css && npm run copy:html",
     "predeploy": "npm run build",
     "deploy": "npx gh-pages -d dist"
   },
