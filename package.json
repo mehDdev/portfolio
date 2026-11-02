@@ -5,11 +5,11 @@
   },
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./input.css -o ./styles/main.css --watch",
-    "copy:html": "mkdir -p dist && cp index.html portfolio.html err.html dist/",
-    "copy:fonts": "mkdir -p dist/fonts && cp -r fonts/* dist/fonts/",
-    "copy:images": "mkdir -p dist/images && cp -r images/* dist/images/",
-    "copy:scripts": "mkdir -p dist/scripts && cp -r scripts/* dist/scripts/",
-    "copy:styles": "mkdir -p dist/styles && cp -r styles/* dist/styles/",
+    "copy:html": "mkdir -p dist && cp src/index.html src/portfolio.html src/err.html dist/",
+    "copy:fonts": "mkdir -p dist/fonts && cp -r src/fonts/* dist/fonts/",
+    "copy:images": "mkdir -p dist/images && cp -r src/images/* dist/images/",
+    "copy:scripts": "mkdir -p dist/scripts && cp -r src/scripts/* dist/scripts/",
+    "copy:styles": "mkdir -p dist/styles && cp -r src/styles/* dist/styles/"
     "build": "npm run copy:html && npm run copy:fonts && npm run copy:images && npm run copy:scripts && npm run copy:styles",
     "predeploy": "npm run build",
     "deploy": "npx gh-pages -d dist"
